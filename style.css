@@ -615,3 +615,283 @@ margin:0 18px 0 0;
   }
 
 }
+/* =========================================
+   DESKCHECK – MODERNE ANIMATIONEN
+   ========================================= */
+
+/* Sanftes Einblenden der gesamten Seite */
+body {
+  animation: pageFade 0.5s ease both;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* dezente Licht-/Flächenbewegung im Hintergrund */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -150px;
+  top: -180px;
+  background: rgba(0,0,0,.035);
+  border-radius: 50%;
+  animation: heroFloat 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-25px, 20px);
+  }
+}
+
+
+/* Hero-Inhalt erscheint nacheinander */
+
+.hero .eyebrow {
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero h1 {
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.1s;
+}
+
+.hero .lead {
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.2s;
+}
+
+.hero .button {
+  animation: fadeUp 0.7s ease both;
+  animation-delay: 0.3s;
+}
+
+
+/* =========================================
+   THEMENKARTEN
+   ========================================= */
+
+.card {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* kleiner Lichtstreifen */
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  background: #171717;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.09);
+  border-color: #d5d5d5;
+}
+
+
+/* Nummer bewegt sich leicht */
+
+.card .icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .icon {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.button {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
+  opacity: .92;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.nav nav a {
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+
+.nav nav a:hover {
+  opacity: .65;
+}
+
+.nav nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 2px;
+  background: #171717;
+  transition: width 0.25s ease;
+}
+
+.nav nav a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================================
+   PRODUKTKARTEN
+   ========================================= */
+
+.product-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.09);
+  border-color: #d5d5d5;
+}
+
+
+/* Produktbild-Platzhalter */
+.product-image-placeholder {
+  transition: transform 0.4s ease;
+  overflow: hidden;
+}
+
+.product-card:hover .product-image-placeholder {
+  transform: scale(1.015);
+}
+
+
+/* Amazon-Button */
+.product-card > a {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.product-card > a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+  opacity: .9;
+}
+
+
+/* =========================================
+   ARTIKEL-ÜBERSCHRIFTEN
+   ========================================= */
+
+.article h2 {
+  animation: fadeUp 0.6s ease both;
+}
+
+
+/* =========================================
+   ALLGEMEINE FADE-UP ANIMATION
+   ========================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   NOTICE / HINWEISE
+   ========================================= */
+
+.notice {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.notice:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,.06);
+}
+
+
+/* =========================================
+   REDUZIERTE BEWEGUNG
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+}
