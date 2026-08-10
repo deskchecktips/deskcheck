@@ -895,3 +895,221 @@ body {
   }
 
 }
+/* =========================================
+   MOBILE DESIGN – DeskCheck
+   ========================================= */
+
+@media (max-width: 760px) {
+
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .wrap {
+    width: min(100% - 32px, 1080px);
+  }
+
+  /* Navigation */
+
+  .nav {
+    min-height: auto;
+    padding: 18px 0;
+    gap: 14px;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .nav nav {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+
+  .nav nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav nav a {
+    white-space: nowrap;
+    font-size: 13px;
+    padding: 8px 11px;
+    border: 1px solid #e5e5e5;
+    border-radius: 999px;
+    background: #fff;
+  }
+
+
+  /* Startseiten-Hero */
+
+  .hero {
+    padding: 55px 0 50px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: .12em;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 12vw, 52px);
+    line-height: 1.02;
+    margin: 12px 0 18px;
+  }
+
+  .lead {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    padding: 14px 18px;
+    border-radius: 9px;
+  }
+
+
+  /* Bereiche */
+
+  .section {
+    padding: 45px 0;
+  }
+
+  .section h2 {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+
+
+  /* Themenkarten */
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 14px;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  .card:active {
+    transform: scale(.98);
+  }
+
+  .card h3 {
+    font-size: 20px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+
+  /* Artikel */
+
+  .article {
+    padding: 45px 0;
+    max-width: 100%;
+  }
+
+  .article h1 {
+    font-size: clamp(34px, 10vw, 48px);
+    line-height: 1.08;
+    margin-bottom: 20px;
+  }
+
+  .article h2 {
+    font-size: 26px;
+    line-height: 1.2;
+    margin-top: 38px;
+  }
+
+  .article p {
+    font-size: 15px;
+  }
+
+
+  /* Produktkarten */
+
+  .product-card {
+    width: 100%;
+    max-width: none;
+    margin: 28px 0;
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  }
+
+  .product-image-placeholder {
+    height: 210px;
+    border-radius: 12px;
+  }
+
+  .product-card h3 {
+    font-size: 21px;
+    line-height: 1.25;
+  }
+
+  .product-card p {
+    font-size: 14px;
+  }
+
+  .product-card > a,
+  .product-button {
+    width: 100%;
+    text-align: center;
+    padding: 13px 16px;
+    border-radius: 9px;
+    margin-top: 10px;
+  }
+
+
+  /* Tabellen */
+
+  .solution-table {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .article table {
+    min-width: 520px;
+    font-size: 14px;
+  }
+
+  .article th,
+  .article td {
+    padding: 11px 10px;
+  }
+
+
+  /* Hinweise */
+
+  .notice {
+    padding: 18px;
+    margin: 25px 0;
+    border-radius: 10px;
+  }
+
+
+  /* Footer */
+
+  .footer {
+    padding: 30px 0;
+    gap: 20px;
+  }
+
+  .footer a {
+    display: inline-block;
+    margin: 5px 12px 5px 0;
+  }
+}
